@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"name": "Beef burger",
+		"prix": 12000,
+		"Vendeur": "Happy king",
+		"url_img": "assets/images/burger-12000.png"
+	},
+	{
+		"id": 2,
+		"name": "Frites",
+		"prix": 5000,
+		"Vendeur": "Gastro pizza",
+		"url_img": "assets/images/frites-5000.png"
+	},
+	{
+		"id": 3,
+		"name": "Pizza 30cm",
+		"prix": 15000,
+		"Vendeur": "Happy king",
+		"url_img": "assets/images/pizza_gastro-15000.png"
+	},
+	{
+		"id": 4,
+		"name": "Sandwich kebab",
+		"prix": 8000,
+		"Vendeur": "Gastro pizza",
+		"url_img": "assets/images/sandwich_kebab-8000.png"
+	},
+	{
+		"id": 5,
+		"name": "French tacos",
+		"prix": 10000,
+		"Vendeur": "Extra pizza",
+		"url_img": "assets/images/tacos-12000.jpeg"
+	},
+	{
+		"id": 6,
+		"name": "Nem et sambos",
+		"prix": 10000,
+		"Vendeur": "Gastro pizza",
+		"url_img": "assets/images/nem_sambos-10000.jpeg"
+	}
+]

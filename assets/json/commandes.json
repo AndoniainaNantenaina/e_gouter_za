@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"name": "Beef burger",
+		"prix": 12000,
+		"Vendeur": "Happy king"
+	},
+	{
+		"id": 2,
+		"name": "Beef burger",
+		"prix": 12000,
+		"Vendeur": "Happy king"
+	},
+	{
+		"id": 3,
+		"name": "Beef burger",
+		"prix": 12000,
+		"Vendeur": "Happy king"
+	},
+	{
+		"id": 4,
+		"name": "Beef burger",
+		"prix": 12000,
+		"Vendeur": "Happy king"
+	}
+]
