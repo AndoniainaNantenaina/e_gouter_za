@@ -1,6 +1,6 @@
 # e_gouter_za
 
-A new Flutter project.
+An food order mobile application build by Flutter
 
 ## Getting Started
 
