@@ -4,41 +4,47 @@
 		"name": "Beef burger",
 		"prix": 12000,
 		"Vendeur": "Happy king",
-		"url_img": "assets/images/burger-12000.png"
+		"url_img": "assets/images/burger-12000.png",
+		"desc": "Un burger à base de chair de boeuf bien cuit de chez HappyKing, avec ses compléments très délicieux"
 	},
 	{
 		"id": 2,
 		"name": "Frites",
 		"prix": 5000,
 		"Vendeur": "Gastro pizza",
-		"url_img": "assets/images/frites-5000.png"
+		"url_img": "assets/images/frites-5000.png",
+		"desc": "Frites de pomme de terre, spécialité de chez La Gastronomie Pizza à prix moins cher, avec les sauces aux choix"
 	},
 	{
 		"id": 3,
 		"name": "Pizza 30cm",
 		"prix": 15000,
 		"Vendeur": "Happy king",
-		"url_img": "assets/images/pizza_gastro-15000.png"
+		"url_img": "assets/images/pizza_gastro-15000.png",
+		"desc": "Une pizza qui mésure 30 cm de diamètre chez HappyKing, avec des mélanges de plusieurs ingrédients"
 	},
 	{
 		"id": 4,
 		"name": "Sandwich kebab",
 		"prix": 8000,
 		"Vendeur": "Gastro pizza",
-		"url_img": "assets/images/sandwich_kebab-8000.png"
+		"url_img": "assets/images/sandwich_kebab-8000.png",
+		"desc": "Le sandwitch kebab de Gastro, votre préféré avec son gout unique"
 	},
 	{
 		"id": 5,
 		"name": "French tacos",
 		"prix": 10000,
 		"Vendeur": "Extra pizza",
-		"url_img": "assets/images/tacos-12000.jpeg"
+		"url_img": "assets/images/tacos-12000.jpeg",
+		"desc": "Votre french tacos fait par le leader du tacos à Madagascar"
 	},
 	{
 		"id": 6,
 		"name": "Nem et sambos",
 		"prix": 10000,
 		"Vendeur": "Gastro pizza",
-		"url_img": "assets/images/nem_sambos-10000.jpeg"
+		"url_img": "assets/images/nem_sambos-10000.jpeg",
+		"desc": "Mélange de sambos et de nem dans une barquette que vous pouvez emmener partout"
 	}
 ]

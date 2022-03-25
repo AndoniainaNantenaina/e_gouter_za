@@ -20,7 +20,7 @@ class _CategorieState extends State<Categorie> {
       ),
       body: Scaffold(
         backgroundColor: Colors.black,
-        body: Column(
+        body: ListView(
           children: [
             ProduitApi.listCategorie(
               "La gastronomie pizza", 
@@ -57,8 +57,8 @@ class _CategorieState extends State<Categorie> {
                   )
                 ));
               }  
-            )
-          ],
+            ),
+          ]
         ),
       ),
     );

@@ -21,7 +21,38 @@ class _A_ProposState extends State<A_Propos> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(),
+        child: Container(
+          alignment: Alignment.center,
+          child: Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    "assets/images/andoniaina.jpg",
+                    scale: 0.1,            
+                  ),
+                ),
+                const Text("E-GOUTER'ZA", style: TextStyle(fontWeight: FontWeight.bold)),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text("Une application développé par ANDONIAINA NANTENAINA Nomenjanahary Joel André avec Flutter pendant un projet d'examen chez ESTI"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(Icons.copyright),
+                      Text("2022"),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

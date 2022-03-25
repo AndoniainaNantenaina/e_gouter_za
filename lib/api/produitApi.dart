@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unrelated_type_equality_checks
+
 import 'dart:convert';
 
 import 'package:e_gouter_za/Pages/products/product_description.dart';
@@ -5,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:e_gouter_za/Model/produit.dart';
 
 class ProduitApi {
+
   static Future<List<Produit>> getProduitFromFile(BuildContext context, String file) async{
     final assetBundle = DefaultAssetBundle.of(context);
     final data = await assetBundle.loadString(file);
@@ -21,58 +24,61 @@ class ProduitApi {
           produits[index].vendor.toLowerCase().contains(search.toLowerCase())) {
         return Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Card(
-          elevation: 8,
-          color: Colors.orangeAccent.shade100,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-          child: Column(
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(produits[index].image_url, height: 200, fit: BoxFit.cover)
-                ],
-              ),
-              SizedBox(
-                height: 30,
-                child: Center(
-                  child: Text(
-                    produits[index].name, 
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)
-                  )
-                )
-              ),
-              SizedBox(
-                child: Text(produits[index].prix.toString() + " Ar"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context)=> ProductDesc(
-                      name: produits[index].name, 
-                      prix: produits[index].prix, 
-                      imgUrl: produits[index].image_url
-                    ))
-                  );
-                },
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(5), 
-                  backgroundColor: MaterialStateProperty.all(Colors.redAccent.shade400),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(Icons.shopping_cart),
-                    Text("Commander")
+          child: Card(
+            elevation: 8,
+            color: Colors.orangeAccent.shade100,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(produits[index].image_url, height: 200, fit: BoxFit.cover)
                   ],
                 ),
-              ),
-              const SizedBox(height: 10)
-            ],
+                SizedBox(
+                  height: 30,
+                  child: Center(
+                    child: Text(
+                      produits[index].name, 
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)
+                    )
+                  )
+                ),
+                SizedBox(
+                  child: Text(produits[index].prix.toString() + " Ar"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context, MaterialPageRoute(builder: (context)=> ProductDesc(
+                        name: produits[index].name, 
+                        prix: produits[index].prix, 
+                        imgUrl: produits[index].image_url, 
+                        nbCommande: 1,
+                        desc: produits[index].desc,
+                        vendor: produits[index].vendor,
+                      ))
+                    );
+                  },
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(5), 
+                    backgroundColor: MaterialStateProperty.all(Colors.redAccent.shade400),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.shopping_cart),
+                      Text(produits[index].vendor.toString())
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10)
+              ],
+            ),
           ),
-        ),
-      );
+        );
       } else {
         return Container();
       }
@@ -104,57 +110,76 @@ class ProduitApi {
 
       final produit = produits[index];
 
-      return Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Card(
-          elevation: 8,
-          color: Colors.orangeAccent.shade100,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-          child: Column(
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(produit.image_url, height: 200, fit: BoxFit.cover)
-                ],
-              ),
-              SizedBox(
-                height: 30,
-                child: Center(
-                  child: Text(
-                    produit.name, 
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)
-                  )
-                )
-              ),
-              SizedBox(
-                child: Text(produit.prix.toString() + " Ar"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context)=> ProductDesc(
-                      name: produit.name, 
-                      prix: produit.prix, 
-                      imgUrl: produit.image_url
-                    ))
-                  );
-                },
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(5), 
-                  backgroundColor: MaterialStateProperty.all(Colors.redAccent.shade400),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(Icons.shopping_cart),
-                    Text("Commander")
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context, MaterialPageRoute(
+              builder: (context)=> ProductDesc(
+                name: produit.name, 
+                prix: produit.prix, 
+                imgUrl: produit.image_url, 
+                nbCommande: 1,
+                desc: produit.desc,
+                vendor: produit.vendor,
+              )
+            )
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            elevation: 8,
+            color: Colors.orangeAccent.shade100,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(produit.image_url, height: 200, fit: BoxFit.cover)
                   ],
                 ),
-              ),
-              const SizedBox(height: 10)
-            ],
+                SizedBox(
+                  height: 30,
+                  child: Center(
+                    child: Text(
+                      produit.name, 
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)
+                    )
+                  )
+                ),
+                SizedBox(
+                  child: Text(produit.prix.toString() + " Ar"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context, MaterialPageRoute(builder: (context)=> ProductDesc(
+                        name: produit.name, 
+                        prix: produit.prix, 
+                        imgUrl: produit.image_url, 
+                        nbCommande: 1,
+                        desc: produit.desc,
+                        vendor: produit.vendor,
+                      ))
+                    );
+                  },
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(5), 
+                    backgroundColor: MaterialStateProperty.all(Colors.redAccent.shade400),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.shopping_cart),
+                      Text(produit.vendor.toString())
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10)
+              ],
+            ),
           ),
         ),
       );
@@ -198,7 +223,10 @@ class ProduitApi {
                       context, MaterialPageRoute(builder: (context)=> ProductDesc(
                         name: produits[index].name, 
                         prix: produits[index].prix, 
-                        imgUrl: produits[index].image_url
+                        imgUrl: produits[index].image_url, 
+                        nbCommande: 1,
+                        desc: produits[index].desc,
+                        vendor: produits[index].vendor,
                       ))
                     );
                   },
@@ -209,9 +237,9 @@ class ProduitApi {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Icon(Icons.shopping_cart),
-                      Text("Commander")
+                    children: [
+                      const Icon(Icons.shopping_cart),
+                      Text(produits[index].vendor.toString())
                     ],
                   ),
                 ),
@@ -225,4 +253,14 @@ class ProduitApi {
       }
     }
   );
+
+  static toJson(Produit commande, String file) async{
+    String data = json.encode({
+      "id": commande.id,
+      "name": commande.name,
+      "prix": commande.prix,
+      "Vendeur": commande.vendor,
+      "date": DateTime.now().toString()
+    });
+  }
 }

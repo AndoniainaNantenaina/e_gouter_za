@@ -31,6 +31,7 @@ class _SearchPageState extends State<SearchPage> {
           child: Column(
             children: <Widget>[
               TextField(
+                autofocus: true,
                 onTap: () => hintText = "",
                 onSubmitted: (value) { 
                   inController.clear();
@@ -42,6 +43,8 @@ class _SearchPageState extends State<SearchPage> {
                 controller: inController,
                 style: const TextStyle(color: Colors.black),
                 decoration: const InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  suffixIconColor: Colors.redAccent,
                   filled: true,
                   fillColor: Colors.white,
                   border: UnderlineInputBorder(

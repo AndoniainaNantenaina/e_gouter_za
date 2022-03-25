@@ -6,13 +6,15 @@ class Produit {
   final int prix;
   final String vendor;
   final String image_url;
+  final String desc;
 
   const Produit({
     required this.id, 
     required this.name, 
     required this.prix, 
     required this.vendor,
-    required this.image_url
+    required this.image_url,
+    required this.desc
   });
 
   static Produit fromJson(json) => Produit(
@@ -20,5 +22,7 @@ class Produit {
     name: json['name'], 
     prix: json['prix'], 
     vendor: json['Vendeur'],
-    image_url: json['url_img']);
+    image_url: json['url_img'], 
+    desc: json['desc']
+  );
 }

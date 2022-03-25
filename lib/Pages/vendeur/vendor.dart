@@ -1,7 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, must_be_immutable
 
 import 'package:e_gouter_za/Model/produit.dart';
-import 'package:e_gouter_za/Pages/products/product_description.dart';
 import 'package:e_gouter_za/api/produitApi.dart';
 import 'package:flutter/material.dart';
 
